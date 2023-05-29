@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Access Blocked</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Access Blocked</h1>
+    <p>
+      This website has been blocked by the Social Blocker extenstion. Please focus on your tasks!  (≧∇≦) </p>
+      <p id="timer"></p>
+      <script>
+      // Define the duration of the blocking period in minutes
+      const blockingDuration = 30;
+
+      // Calculate the target time when the blocking period will end
+      const currentTime = new Date().getTime();
+      const targetTime = currentTime + blockingDuration * 60 * 1000;
+
+      // Function to update the remaining time every second
+      function updateTimer() {
+        const currentTime = new Date().getTime();
+        const remainingTime = targetTime - currentTime;
+
+        // Convert remaining time to minutes and seconds
+        const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+        // Display the remaining time in the timer element
+        document.getElementById("timer").textContent =
+          "Time remaining: " + minutes + "m " + seconds + "s";
+
+        // Update the timer every second
+        setTimeout(updateTimer, 1000);
+      }
+
+      // Start the timer
+      updateTimer();
+    </script>
+  </body>
+</html>
