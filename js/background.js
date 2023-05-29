@@ -28,3 +28,29 @@ function updateBlockingBehavior() {
 
 // Initial update
 updateBlockingBehavior();
+
+//notification
+
+function showNotification() {
+  const currentTime = new Date().toLocaleDateString();
+  const notificationOptions = {
+    type: 'basic',
+    iconUrl: 'path_to_icon/icon.png',
+    title: 'Social Media Blocker',
+    message: 'The block is over! (≧∇≦)',
+  };
+
+  chrome.notifications.create('notificationId', notificationOptions);
+}
+
+function stopBlocking() {
+  // Clear any existing alarms or timers
+  chrome.alarms.clear('blockingAlarm');
+  clearTimeout(blockingTimeout);
+
+  // Update the extension's state
+  isBlocking = false;
+
+  // Display notification
+  showNotification();
+}

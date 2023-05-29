@@ -33,7 +33,8 @@
          "*://*.twitter.com/*",
         "*://*.tiktok.com/*",
         "*://*.twitch.tv/*",
-        "*://*.instagram.com*"
+        "*://*.instagram.com*",
+        "notifications"
 
         ],
         "content_scripts": [

@@ -1,2 +1,2 @@
 # Social Blocker
- an extension that blocks social media sites in chrome
+A Google Chrome extension that blocks social media websites for the time the user sets. (Facebook, Twitter, Twtich, Instagram, TikTok)
